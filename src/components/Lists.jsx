@@ -1,11 +1,18 @@
-export function Lists({ lists }) {
+export function Lists({ lists, setSelectedArt }) {
 	return (
 		<div className="results">
 			{lists.length > 0 ? (
 				<ul>
 					{lists.map((list, index) => (
 						<li key={index}>
-							<h1>{list.title}</h1>
+							<button
+								onClick={(evt) => {
+									evt.preventDefault();
+									setSelectedArt(list);
+								}}
+							>
+								{list.title}
+							</button>
 							<p>Artist: {list.artist_title || 'Unknown'}</p>
 						</li>
 					))}
