@@ -1,5 +1,4 @@
 export function ImageDetailsPage({ selectedArt, setSelectedArt }) {
-	// console.log(selectedArt)
 	const { title, artist_title, thumbnail, image_id } = selectedArt;
 	return (
 		<div>
