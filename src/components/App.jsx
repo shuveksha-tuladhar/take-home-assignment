@@ -38,7 +38,12 @@ export function App() {
 					<Lists lists={lists} setSelectedArt={setSelectedArt} />
 				</>
 			)}
-			{selectedArt !== null && <ImageDetailsPage selectedArt={selectedArt} />}
+			{selectedArt !== null && (
+				<ImageDetailsPage
+					selectedArt={selectedArt}
+					setSelectedArt={setSelectedArt}
+				/>
+			)}
 			<Footer />
 		</div>
 	);
