@@ -9,7 +9,9 @@ export function SearchForm({ onSearchSubmit }) {
 		setQuery(evt.target.value);
 	}
 
-	function handleFormSubmit() {
+	function handleFormSubmit(evt) {
+		// Fix a known bug: the whole app refreshes when SearchForm is submitted
+		evt.preventDefault();
 		onSearchSubmit(query);
 	}
 
