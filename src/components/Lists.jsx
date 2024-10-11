@@ -1,11 +1,14 @@
+import './Lists.css';
+
 export function Lists({ lists, setSelectedArt }) {
 	return (
 		<div className="results">
 			{lists.length > 0 ? (
-				<ul>
+				<ol>
 					{lists.map((list, index) => (
 						<li key={index}>
 							<button
+								className="title-button"
 								onClick={(evt) => {
 									evt.preventDefault();
 									setSelectedArt(list);
@@ -16,7 +19,7 @@ export function Lists({ lists, setSelectedArt }) {
 							<p>Artist: {list.artist_title || 'Unknown'}</p>
 						</li>
 					))}
-				</ul>
+				</ol>
 			) : (
 				<p>No artworks found. Please refine your search!</p>
 			)}
